@@ -25,6 +25,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 img{max-width:100%}
 
 </style>
+<link rel="stylesheet" href="/assets/mobile.css">
 </head>
 <body>
 <div style="font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Yu Gothic', sans-serif; color: #1A1D23; background: #FFFFFF; line-height: 1.85; letter-spacing: 0.02em">
@@ -36,7 +37,8 @@ img{max-width:100%}
 <img src="/assets/logo-horizontal.png" alt="NISSO CAPITAL" style="height: 52px; width: auto; display: block">
 <span style="font-size: 12px; color: #545A66; letter-spacing: 0.08em; padding-left: 14px; border-left: 1px solid #E1E7E5; line-height: 1.4">NISSOキャピタル<br>株式会社</span>
 </a>
-<nav aria-label="メインメニュー" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 14px; font-weight: 500">
+<button type="button" class="nav-btn" aria-label="メニューを開く" aria-controls="gnav" aria-expanded="false" onclick="var o=this.closest('header').classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<nav id="gnav" aria-label="メインメニュー" onclick="if(event.target.closest('a')){var h=this.closest('header');h.classList.remove('nav-open');h.querySelector('.nav-btn').setAttribute('aria-expanded',false)}" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 14px; font-weight: 500">
 <a href="/#about" style="text-decoration: none; padding: 10px 0">会社概要</a>
 <a href="/services/" style="text-decoration: none; padding: 10px 0">事業内容</a>
 <a href="/invest/" style="text-decoration: none; padding: 10px 0">不動産投資について</a>
@@ -60,55 +62,54 @@ img{max-width:100%}
 
 <section style="background: #FFFFFF">
 <div style="max-width: 820px; margin: 0 auto; padding: 72px 32px 112px; font-size: 16px; line-height: 2">
-<p style="margin: 0 0 16px">NISSOキャピタル株式会社（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）におけるプライバシー情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。</p>
-<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第１条（プライバシー情報）</h2>
-<p style="margin: 0 0 16px">プライバシー情報のうち「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報を指します。</p>
-<p style="margin: 0 0 16px">プライバシー情報のうち「履歴情報および特性情報」とは，上記に定める「個人情報」以外のものをいい，ご利用いただいたサービスやご購入いただいた商品，ご覧になったページや広告の履歴，ユーザーが検索された検索キーワード，ご利用日時，ご利用の方法，ご利用環境，郵便番号や性別，職業，年齢，ユーザーのIPアドレス，クッキー情報，位置情報，端末の個体識別情報などを指します。</p>
-<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第２条（プライバシー情報の収集方法）</h2>
-<p style="margin: 0 0 16px">当社は，ユーザーが利用登録をする際に氏名，生年月日，住所，電話番号，メールアドレス，銀行口座番号，クレジットカード番号，運転免許証番号などの個人情報をお尋ねすることがあります。また，ユーザーと提携先などとの間でなされたユーザーの個人情報を含む取引記録や，決済に関する情報を当社の提携先（情報提供元，広告主，広告配信先などを含みます。以下，｢提携先｣といいます。）などから収集することがあります。</p>
-<p style="margin: 0 0 16px">当社は，ユーザーについて，利用したサービスやソフトウエア，購入した商品，閲覧したページや広告の履歴，検索した検索キーワード，利用日時，利用方法，利用環境（携帯端末を通じてご利用の場合の当該端末の通信状態，利用に際しての各種設定情報なども含みます），IPアドレス，クッキー情報，位置情報，端末の個体識別情報などの履歴情報および特性情報を，ユーザーが当社や提携先のサービスを利用しまたはページを閲覧する際に収集します。</p>
-<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第３条（個人情報を収集・利用する目的）</h2>
-<p style="margin: 0 0 16px">当社が個人情報を収集・利用する目的は，以下のとおりです。</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（1）ユーザーに自分の登録情報の閲覧や修正，利用状況の閲覧を行っていただくために，氏名，住所，連絡先，支払方法などの登録情報，利用されたサービスや購入された商品，およびそれらの代金などに関する情報を表示する目的</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（2）ユーザーにお知らせや連絡をするためにメールアドレスを利用する場合やユーザーに商品を送付したり必要に応じて連絡したりするため，氏名や住所などの連絡先情報を利用する目的</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（3）ユーザーの本人確認を行うために，氏名，生年月日，住所，電話番号，銀行口座番号，クレジットカード番号，運転免許証番号，配達証明付き郵便の到達結果などの情報を利用する目的</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（4）ユーザーに代金を請求するために，購入された商品名や数量，利用されたサービスの種類や期間，回数，請求金額，氏名，住所，銀行口座番号やクレジットカード番号などの支払に関する情報などを利用する目的</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（5）ユーザーが簡便にデータを入力できるようにするために，当社に登録されている情報を入力画面に表示させたり，ユーザーのご指示に基づいて他のサービスなど（提携先が提供するものも含みます）に転送したりする目的</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（6）代金の支払を遅滞したり第三者に損害を発生させたりするなど，本サービスの利用規約に違反したユーザーや，不正・不当な目的でサービスを利用しようとするユーザーの利用をお断りするために，利用態様，氏名や住所など個人を特定するための情報を利用する目的</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（7）ユーザーからのお問い合わせに対応するために，お問い合わせ内容や代金の請求に関する情報など当社がユーザーに対してサービスを提供するにあたって必要となる情報や，ユーザーのサービス利用状況，連絡先情報などを利用する目的</p>
+<p style="margin: 0 0 16px">NISSOキャピタル株式会社（以下「当社」といいます。）は、不動産の売買・仲介・賃貸・管理およびコンサルティング事業を営むにあたり、お客様の個人情報を適切に取り扱うことが重要な責務であると考えています。当社は、個人情報の保護に関する法律（以下「個人情報保護法」といいます。）その他の関係法令およびガイドラインを遵守し、以下のとおり個人情報保護方針（以下「本方針」といいます。）を定めます。</p>
+<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第1条（個人情報の定義）</h2>
+<p style="margin: 0 0 16px">本方針において「個人情報」とは、個人情報保護法に定める個人情報をいい、生存する個人に関する情報であって、氏名、生年月日、住所、電話番号、メールアドレスその他の記述等により特定の個人を識別できるもの（他の情報と容易に照合でき、それにより特定の個人を識別できるものを含みます。）および個人識別符号が含まれるものをいいます。</p>
+<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第2条（取得する個人情報と取得方法）</h2>
+<p style="margin: 0 0 16px">当社は、適法かつ公正な手段により、次の個人情報を取得します。</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（1）お問い合わせフォーム、お電話、LINE、ご来店等によるお問い合わせ・ご相談の際にご提供いただく、氏名、電話番号、メールアドレス、ご相談内容等</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（2）不動産の売買・賃貸・管理等のお取引に際してご提供いただく、氏名、生年月日、住所、連絡先、勤務先、年収・資産の状況、本人確認書類の記載事項、金融機関の口座情報等</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（3）セミナー・勉強会へのお申込みの際にご提供いただく情報</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（4）当社ウェブサイトのご利用に伴い取得されるアクセス情報（IPアドレス、ブラウザの種類、閲覧履歴、Cookie情報等）</p>
+<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第3条（利用目的）</h2>
+<p style="margin: 0 0 16px">当社は、取得した個人情報を次の目的の範囲内で利用します。</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（1）お問い合わせ・ご相談への回答およびご連絡</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（2）不動産の売買・仲介・賃貸・管理・コンサルティング等の当社サービスの提供、および物件情報のご案内</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（3）売買契約・賃貸借契約・管理委託契約等の締結および履行、ならびにご契約後のアフターフォロー</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（4）住宅ローン等の融資のお申込みに関する、金融機関への取次ぎ</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（5）法令に基づく本人確認（犯罪による収益の移転防止に関する法律に基づく取引時確認を含みます。）、ならびに宅地建物取引業法その他の法令に基づく義務の履行</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（6）セミナー・勉強会、新着物件等のご案内（ご本人から停止のお申出があった場合は、ご案内を停止します。）</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（7）当社サービスおよびウェブサイトの改善、ならびに利用状況の分析</p>
 <p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（8）上記の利用目的に付随する目的</p>
-<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第４条（個人情報の第三者提供）</h2>
-<p style="margin: 0 0 16px">当社は，次に掲げる場合を除いて，あらかじめユーザーの同意を得ることなく，第三者に個人情報を提供することはありません。ただし，個人情報保護法その他の法令で認められる場合を除きます。</p>
+<p style="margin: 0 0 16px">当社は、上記の利用目的の範囲を超えて個人情報を取り扱う場合には、あらかじめご本人の同意を得ます。</p>
+<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第4条（安全管理措置）</h2>
+<p style="margin: 0 0 16px">当社は、取り扱う個人データの漏えい、滅失または毀損の防止その他の安全管理のため、必要かつ適切な措置を講じます。主な措置は次のとおりです。</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（1）組織的安全管理措置：個人データの取扱いに関する責任者を定め、法令や本方針に違反する事実またはその兆候を把握した場合の報告連絡体制を整備しています。</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（2）人的安全管理措置：従業者に対し、個人データの適正な取扱いについて教育を行うとともに、秘密保持に関する事項を定めています。</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（3）物理的安全管理措置：個人データを取り扱う区域への入室を管理し、書類・機器等の盗難または紛失を防止するための措置を講じています。</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（4）技術的安全管理措置：アクセス制御により、個人データを取り扱う担当者および取り扱う範囲を限定するとともに、外部からの不正アクセス等を防止する仕組みを導入しています。</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（5）外的環境の把握：当社は、米国に所在するGoogle LLCが提供するクラウドサービスを利用して個人データを保管する場合があり、米国における個人情報の保護に関する制度を把握したうえで安全管理措置を実施しています。</p>
+<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第5条（第三者への提供）</h2>
+<p style="margin: 0 0 16px">当社は、次のいずれかに該当する場合を除き、あらかじめご本人の同意を得ることなく、個人データを第三者に提供しません。</p>
 <p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（1）法令に基づく場合</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（2）人の生命，身体または財産の保護のために必要がある場合であって，本人の同意を得ることが困難であるとき</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（3）公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって，本人の同意を得ることが困難であるとき</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（4）国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって，本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（5）予め次の事項を告知あるいは公表をしている場合</p>
-<ul style="margin: 0 0 16px; padding-left: 4em"><li>利用目的に第三者への提供を含むこと</li><li>第三者に提供されるデータの項目</li><li>第三者への提供の手段または方法</li><li>本人の求めに応じて個人情報の第三者への提供を停止すること</li></ul>
-<p style="margin: 0 0 16px">前項の定めにかかわらず，次に掲げる場合は第三者には該当しないものとします。</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（1）当社が利用目的の達成に必要な範囲内において個人情報の取扱いの全部または一部を委託する場合</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（2）合併その他の事由による事業の承継に伴って個人情報が提供される場合</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（3）個人情報を特定の者との間で共同して利用する場合であって，その旨並びに共同して利用される個人情報の項目，共同して利用する者の範囲，利用する者の利用目的および当該個人情報の管理について責任を有する者の氏名または名称について，あらかじめ本人に通知し，または本人が容易に知り得る状態に置いているとき</p>
-<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第５条（個人情報の開示）</h2>
-<p style="margin: 0 0 16px">当社は，本人から個人情報の開示を求められたときは，本人に対し，遅滞なくこれを開示します。ただし，開示することにより次のいずれかに該当する場合は，その全部または一部を開示しないこともあり，開示しない決定をした場合には，その旨を遅滞なく通知します。なお，個人情報の開示に際しては，１件あたり１，０００円の手数料を申し受けます。</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（1）本人または第三者の生命，身体，財産その他の権利利益を害するおそれがある場合</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（2）当社の業務の適正な実施に著しい支障を及ぼすおそれがある場合</p>
-<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（3）その他法令に違反することとなる場合</p>
-<p style="margin: 0 0 16px">前項の定めにかかわらず，履歴情報および特性情報などの個人情報以外の情報については，原則として開示いたしません。</p>
-<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第６条（個人情報の訂正および削除）</h2>
-<p style="margin: 0 0 16px">ユーザーは，当社の保有する自己の個人情報が誤った情報である場合には，当社が定める手続きにより，当社に対して個人情報の訂正または削除を請求することができます。</p>
-<p style="margin: 0 0 16px">当社は，ユーザーから前項の請求を受けてその請求に応じる必要があると判断した場合には，遅滞なく，当該個人情報の訂正または削除を行い，これをユーザーに通知します。</p>
-<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第７条（個人情報の利用停止等）</h2>
-<p style="margin: 0 0 16px">当社は，本人から，個人情報が，利用目的の範囲を超えて取り扱われているという理由，または不正の手段により取得されたものであるという理由により，その利用の停止または消去（以下，「利用停止等」といいます。）を求められた場合には，遅滞なく必要な調査を行い，その結果に基づき，個人情報の利用停止等を行い，その旨本人に通知します。ただし，個人情報の利用停止等に多額の費用を有する場合その他利用停止等を行うことが困難な場合であって，本人の権利利益を保護するために必要なこれに代わるべき措置をとれる場合は，この代替策を講じます。</p>
-<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第８条（プライバシーポリシーの変更）</h2>
-<p style="margin: 0 0 16px">本ポリシーの内容は，ユーザーに通知することなく，変更することができるものとします。</p>
-<p style="margin: 0 0 16px">当社が別途定める場合を除いて，変更後のプライバシーポリシーは，本ウェブサイトに掲載したときから効力を生じるものとします。</p>
-<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第９条（お問い合わせ窓口）</h2>
-<p style="margin: 0 0 16px">本ポリシーに関するお問い合わせは，下記の窓口までお願いいたします。</p>
-<p style="margin: 0 0 16px">住所：愛知県名古屋市中区新栄1丁目31‐7　ｆビル新栄Ⅰ　2Ａ</p>
-<p style="margin: 0 0 16px">社名：NISSOキャピタル株式会社</p>
-<p style="margin: 0 0 16px">電話番号：052‐855‐2699</p>
-<p style="margin: 32px 0 0; text-align: right">以上</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（2）人の生命、身体または財産の保護のために必要がある場合であって、ご本人の同意を得ることが困難であるとき</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（3）公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、ご本人の同意を得ることが困難であるとき</p>
+<p style="margin: 0 0 8px; padding-left: 2.5em; text-indent: -2.5em">（4）国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、ご本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</p>
+<p style="margin: 0 0 16px">不動産取引の性質上、取引の相手方（売主・買主・貸主・借主等）、他の宅地建物取引業者、金融機関、司法書士、保険会社等に個人データを提供する必要がある場合は、あらかじめご本人の同意を得たうえで提供します。</p>
+<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第6条（業務の委託）</h2>
+<p style="margin: 0 0 16px">当社は、利用目的の達成に必要な範囲内で、個人データの取扱いの全部または一部を外部に委託することがあります。この場合、当社は、十分な水準の安全管理措置を講じている委託先を選定し、委託先に対して必要かつ適切な監督を行います。</p>
+<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第7条（外部サービスおよびCookieの利用）</h2>
+<p style="margin: 0 0 16px">当社ウェブサイトでは、お問い合わせの受付にGoogle LLCが提供する「Googleフォーム」を、地図の表示に同社の「Googleマップ」を、ご相談の受付にLINEヤフー株式会社が提供する「LINE公式アカウント」を利用しています。これらのサービスを通じて当社が取得した個人情報は、本方針に従って取り扱います。各サービスにおける情報の取扱いについては、各社のプライバシーポリシーをご確認ください。</p>
+<p style="margin: 0 0 16px">また、これらの外部サービスの利用に伴い、サービス提供者がCookie等を通じてアクセス情報を取得する場合があります。Cookieはブラウザの設定により無効にすることができますが、その場合、お問い合わせフォームの表示など、一部の機能をご利用いただけないことがあります。</p>
+<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第8条（保有個人データの開示等のご請求）</h2>
+<p style="margin: 0 0 16px">ご本人は、当社が保有する個人データについて、利用目的の通知、開示（第三者提供記録の開示を含みます。）、内容の訂正・追加・削除、利用の停止・消去、および第三者への提供の停止（以下「開示等」といいます。）を請求することができます。開示等のご請求は、第10条のお問い合わせ窓口までご連絡ください。</p>
+<p style="margin: 0 0 16px">当社は、ご本人またはその代理人であることを確認したうえで、法令に従い遅滞なく対応します。ただし、法令に基づき開示等に応じられない場合は、その旨と理由をお知らせします。なお、利用目的の通知および開示のご請求については、1件あたり1,000円の手数料を申し受けます。</p>
+<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第9条（本方針の変更）</h2>
+<p style="margin: 0 0 16px">当社は、法令の改正や事業内容の変更等に応じて、本方針を改定することがあります。改定後の本方針は、当社ウェブサイトに掲載した時点から効力を生じるものとします。</p>
+<h2 style="margin: 56px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #E1E7E5; font-size: 19px; color: #0F3B36">第10条（お問い合わせ窓口）</h2>
+<p style="margin: 0 0 16px">個人情報の取扱いに関するお問い合わせ、苦情、および開示等のご請求は、下記の窓口までご連絡ください。</p>
+<p style="margin: 8px 0 16px; padding: 20px 24px; background: #F2F5F4">NISSOキャピタル株式会社　個人情報お問い合わせ窓口<br>所在地：〒460-0007 愛知県名古屋市中区新栄1丁目31-7 fビル新栄Ⅰ 2A<br>代表者：代表取締役社長 藤田 潤紀<br>電話番号：052-855-2699（受付時間 10:00〜20:00／水曜定休）</p>
+<p style="margin: 40px 0 0; text-align: right">2026年10月17日 改定<br>以上</p>
 </div>
 </section>
 

@@ -25,6 +25,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 img{max-width:100%}
 
 </style>
+<link rel="stylesheet" href="/assets/mobile.css">
 </head>
 <body>
 <div style="font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Yu Gothic', sans-serif; color: #1A1D23; background: #FFFFFF; line-height: 1.85; letter-spacing: 0.02em">
@@ -36,7 +37,8 @@ img{max-width:100%}
 <img src="/assets/logo-horizontal.png" alt="NISSO CAPITAL" style="height: 52px; width: auto; display: block">
 <span style="font-size: 12px; color: #545A66; letter-spacing: 0.08em; padding-left: 14px; border-left: 1px solid #E1E7E5; line-height: 1.4">NISSOキャピタル<br>株式会社</span>
 </a>
-<nav aria-label="メインメニュー" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 14px; font-weight: 500">
+<button type="button" class="nav-btn" aria-label="メニューを開く" aria-controls="gnav" aria-expanded="false" onclick="var o=this.closest('header').classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<nav id="gnav" aria-label="メインメニュー" onclick="if(event.target.closest('a')){var h=this.closest('header');h.classList.remove('nav-open');h.querySelector('.nav-btn').setAttribute('aria-expanded',false)}" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 14px; font-weight: 500">
 <a href="/#about" style="text-decoration: none; padding: 10px 0">会社概要</a>
 <a href="/services/" aria-current="page" style="text-decoration: none; padding: 10px 0; border-bottom: 2px solid #0F3B36">事業内容</a>
 <a href="/invest/" style="text-decoration: none; padding: 10px 0">不動産投資について</a>

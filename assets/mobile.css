@@ -1,0 +1,38 @@
+.nav-btn{display:none}
+@media (max-width:640px){
+header>div{padding:10px 20px!important;gap:0!important}
+header>div>a:first-child img{height:40px!important}
+.nav-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:auto;padding:0;border:1px solid #E1E7E5;background:#FFFFFF;color:#0F3B36;cursor:pointer}
+#gnav{display:none!important;width:100%;flex-direction:column;align-items:stretch!important;gap:0!important;padding-top:8px}
+header.nav-open #gnav{display:flex!important}
+#gnav a{padding:14px 4px!important;border-bottom:1px solid #E1E7E5!important}
+#gnav a:last-child{margin:12px 0 4px;padding:14px!important;text-align:center;border-bottom:0!important}
+
+section>div[style*="padding: 1"],section>div[style*="padding: 9"]{padding-top:56px!important;padding-bottom:56px!important}
+section>div[style*="padding: 72px"]{padding-top:40px!important;padding-bottom:48px!important}
+section>div,footer>div{padding-left:20px!important;padding-right:20px!important}
+footer>div[style*="padding: 64px"]{padding-top:40px!important;padding-bottom:24px!important}
+article[style*="padding: 40px 32px"]{padding:24px 20px!important}
+[style*="padding: 64px clamp(24px, 5vw, 72px)"]{padding:36px 20px!important}
+[style*="gap: 48px 72px"],[style*="gap: 48px 80px"],[style*="gap: 56px"],[style*="gap: 40px 64px"]{gap:28px!important}
+
+h1{font-size:28px!important}
+#top h1{font-size:30px!important}
+h2[style*="clamp("]{font-size:22px!important}
+h3[style*="clamp("]{font-size:21px!important}
+[style*="font-size: 56px"]{font-size:36px!important}
+[style*="font-size: 44px"],[style*="font-size: 40px"]{font-size:32px!important}
+
+#top>div>div{gap:20px!important}
+#top [style*="flex: 1 1 420px"]{display:none!important}
+#top p[style*="font-size: 17px"]{font-size:15px!important}
+#top a[href^="tel"] span[style*="font-size: 26px"]{font-size:22px!important}
+
+dl[style*="minmax(120px, 180px)"]{grid-template-columns:88px minmax(0,1fr)!important}
+dl[style*="minmax(150px, 230px)"]{grid-template-columns:100px minmax(0,1fr)!important}
+[style*="minmax(120px, 190px)"]{grid-template-columns:96px minmax(0,1fr)!important}
+dl dt,dl dd{padding-top:14px!important;padding-bottom:14px!important}
+table[style*="min-width: 640px"]{min-width:0!important;font-size:13px!important}
+table[style*="min-width: 640px"] th[style*="width: 140px"]{width:64px!important}
+table[style*="min-width: 640px"] th,table[style*="min-width: 640px"] td{padding:10px 8px!important}
+}
