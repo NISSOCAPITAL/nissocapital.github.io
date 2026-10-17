@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>収支シミュレーション｜NISSOキャピタル株式会社</title>
+<meta name="description" content="物件価格・家賃・ローン条件を入力して、マンション経営の月々の収支の目安を確認できます。">
+<meta property="og:title" content="収支シミュレーション｜NISSOキャピタル株式会社">
+<meta property="og:description" content="物件価格・家賃・ローン条件を入力して、マンション経営の月々の収支の目安を確認できます。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NISSOキャピタル株式会社">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F3B36}a:hover{color:#2B6B62}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid #D4A940;outline-offset:2px}
+img{max-width:100%}
+.sim{
+    --green:#0F3B36; --green-line:#24605A; --gold:#D4A940;
+    --ground:#F2F5F4; --line:#E1E7E5; --ink:#1A1D23; --body:#3D424C; --muted:#545A66;
+    --warn-bg:#FFF8EA; --warn-line:#E8D5A8; --warn-ink:#6B4E16; --neg:#7A2E12;
+  }
+.sim *{box-sizing:border-box}
+.sim .wrap{max-width:1180px;margin:0 auto;padding:24px 16px 40px;display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.sim .panel{background:#fff;padding:clamp(20px,4vw,36px)}
+.sim .inputs{flex:1 1 400px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.sim .results{flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.sim h2{margin:0;font-size:19px;color:var(--green)}
+.sim h3{margin:0;font-size:16px;color:var(--green)}
+.sim .head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.sim button.reset{min-height:44px;padding:0 16px;background:transparent;border:1px solid #C9D4D1;color:var(--green);font:inherit;font-size:13px;cursor:pointer}
+.sim .field{display:flex;flex-direction:column;gap:6px}
+.sim .row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.sim .field label{font-size:15px;font-weight:700;color:var(--green)}
+.sim .num{display:flex;align-items:center;gap:6px}
+.sim .num input{width:110px;min-height:40px;padding:0 10px;border:1px solid #C9D4D1;font:inherit;font-size:16px;font-weight:700;color:var(--green);text-align:right}
+.sim .num span{font-size:13px;color:var(--muted);min-width:34px}
+.sim input[type=range]{width:100%;accent-color:var(--green);min-height:28px}
+.sim .hint{font-size:12px;color:var(--muted)}
+.sim input:focus-visible,.sim button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.sim .hero{background:var(--green);color:#fff;padding:clamp(20px,4vw,36px);display:flex;flex-direction:column;gap:6px}
+.sim .hero .label{font-size:14px;color:#D3E3DF}
+.sim .big{font-family:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;font-size:clamp(38px,6vw,54px);font-weight:700;line-height:1.15}
+.sim .big small{font-size:22px}
+.sim .big.neg{color:#F5C9B3}
+.sim .pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--green-line);margin-top:14px}
+.sim .pair div{background:var(--green);padding:12px 0;display:flex;flex-direction:column}
+.sim .pair div+div{padding-left:16px}
+.sim .pair span:first-child{font-size:12px;color:#A7C2BC}
+.sim .pair span:last-child{font-size:19px;font-weight:700}
+.sim .bars{display:grid;grid-template-columns:72px minmax(0,1fr);gap:10px 12px;align-items:center;font-size:13px}
+.sim .bars b{color:var(--green)}
+.sim .track{display:flex;height:34px}
+.sim .seg{display:flex;align-items:center;padding-left:10px;font-weight:700;white-space:nowrap;overflow:hidden}
+.sim .seg.rent{background:var(--green);color:#fff}
+.sim .seg.loan{background:#8C7A62;color:#fff}
+.sim .seg.cost{background:#D9CFC0;color:var(--body);padding-left:8px}
+.sim .note{margin:0;font-size:12px;color:var(--muted)}
+.sim dl{margin:0;display:grid;grid-template-columns:minmax(0,1fr) auto;font-size:14px}
+.sim dt,.sim dd{padding:13px 0;border-bottom:1px solid var(--line)}
+.sim dt{color:var(--body)}
+.sim dd{margin:0;font-weight:700;color:var(--green);text-align:right}
+.sim dl>*:nth-last-child(-n+2){border-bottom:0}
+.sim .stress{background:var(--warn-bg);border:1px solid var(--warn-line);padding:20px clamp(18px,3vw,30px);font-size:14px;color:var(--body)}
+.sim .stress b.t{display:block;color:var(--warn-ink);margin-bottom:4px}
+.sim .stress .neg{color:var(--neg)}
+.sim .caution{flex:1 1 100%;background:#fff;padding:22px 28px;font-size:12px;color:var(--muted);line-height:1.9}
+.sim .caution p{margin:0}
+@media (max-width:480px){.sim .pair{grid-template-columns:1fr}.sim .pair div+div{padding-left:0;border-top:1px solid var(--green-line)}}
+</style>
+</head>
+<body>
+<div style="font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Yu Gothic', sans-serif; color: #1A1D23; background: #FFFFFF; line-height: 1.85; letter-spacing: 0.02em">
+
+<!-- Header -->
+<header style="border-bottom: 1px solid #E1E7E5; background: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0F3B36">
+<img src="/assets/logo-horizontal.png" alt="NISSO CAPITAL" style="height: 52px; width: auto; display: block">
+<span style="font-size: 12px; color: #545A66; letter-spacing: 0.08em; padding-left: 14px; border-left: 1px solid #E1E7E5; line-height: 1.4">NISSOキャピタル<br>株式会社</span>
+</a>
+<nav aria-label="メインメニュー" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 14px; font-weight: 500">
+<a href="/#about" style="text-decoration: none; padding: 10px 0">会社概要</a>
+<a href="/services/" style="text-decoration: none; padding: 10px 0">事業内容</a>
+<a href="/invest/" style="text-decoration: none; padding: 10px 0">不動産投資について</a>
+<a href="/simulator/" aria-current="page" style="text-decoration: none; padding: 10px 0; border-bottom: 2px solid #0F3B36">シミュレーション</a>
+<a href="/#company" style="text-decoration: none; padding: 10px 0">会社情報</a>
+<a href="/contact/" style="text-decoration: none; padding: 12px 22px; background: #0F3B36; color: #FFFFFF">お問い合わせ</a>
+</nav>
+</div>
+</header>
+
+<!-- Page title -->
+<section style="background: #0F3B36; color: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 64px; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-size: 13px; color: #A7C2BC"><a href="/" style="color: #D3E3DF">ホーム</a>　／　収支シミュレーション</p>
+<p style="margin: 8px 0 0; font-size: 13px; letter-spacing: 0.24em; color: #D4A940; font-weight: 700">SIMULATION</p>
+<h1 style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: clamp(32px, 4vw, 48px); line-height: 1.4; letter-spacing: 0.06em">収支シミュレーション</h1>
+<p style="margin: 0; font-size: 16px; color: #D3E3DF; max-width: 40em">物件価格や家賃、ローン条件を動かして、マンション経営の月々の収支の目安を確認できます。</p>
+</div>
+</section>
+
+<!-- Simulator -->
+<section class="sim" style="background: #F2F5F4; padding: 48px 16px 72px">
+<div class="wrap">
+  <section class="panel inputs" aria-labelledby="t-in">
+    <div class="head">
+      <h2 id="t-in">条件を入力</h2>
+      <button type="button" class="reset" id="reset">初期値に戻す</button>
+    </div>
+    <div id="fields"></div>
+  </section>
+
+  <section class="results" aria-live="polite" aria-labelledby="t-out">
+    <h2 id="t-out" style="position:absolute;width:1px;height:1px;overflow:hidden">シミュレーション結果</h2>
+    <div class="hero">
+      <span class="label">毎月の手取り収支（目安）</span>
+      <span class="big" id="monthly">0<small>円</small></span>
+      <span class="label" id="monthlyNote"></span>
+      <div class="pair">
+        <div><span>年間の手取り収支</span><span id="yearly"></span></div>
+        <div><span>ローン完済後の月収入</span><span id="after"></span></div>
+      </div>
+    </div>
+
+    <div class="panel" style="display:flex;flex-direction:column;gap:14px">
+      <h3>月々のお金の流れ</h3>
+      <div class="bars">
+        <b>収入</b><div class="track"><span class="seg rent" id="barRent"></span></div>
+        <b>支出</b><div class="track"><span class="seg loan" id="barLoan"></span><span class="seg cost" id="barCost">管理費等</span></div>
+      </div>
+      <p class="note" id="barNote"></p>
+    </div>
+
+    <div class="panel" style="padding-top:4px;padding-bottom:4px">
+      <dl>
+        <dt>表面利回り</dt><dd id="gy"></dd>
+        <dt>実質利回り（空室・管理費等を考慮）</dt><dd id="ny"></dd>
+        <dt>借入額</dt><dd id="loan"></dd>
+        <dt>毎月のローン返済額</dt><dd id="pay"></dd>
+        <dt>総返済額（うち利息）</dt><dd id="total"></dd>
+      </dl>
+    </div>
+
+    <div class="stress">
+      <b class="t" id="stressTitle"></b>
+      毎月の返済額は <strong id="stressPay"></strong>、手取り収支は <strong id="stressMonthly"></strong> になります。変動金利の場合は、金利上昇も想定した資金計画が大切です。
+    </div>
+  </section>
+
+  <div class="caution">
+    <p><strong style="color:#3D424C">ご注意</strong></p>
+    <p>※本シミュレーションは、入力条件にもとづく概算です。実際の収支や利回りを保証するものではありません。</p>
+    <p>※ローン返済額は元利均等返済で計算しています。金利は返済期間を通じて一定と仮定しています。</p>
+    <p>※固定資産税・都市計画税、修繕費、入退去時の原状回復費、購入時の諸費用、所得税・住民税などは含まれていません。</p>
+    <p>※実際の融資条件（金利・期間・自己資金）は金融機関の審査により異なります。詳しくは担当スタッフにご相談ください。</p>
+  </div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="background: #F2F5F4">
+<div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px">
+<div style="background: #0F3B36; color: #FFFFFF; padding: 64px clamp(24px, 5vw, 72px); display: flex; flex-wrap: wrap; align-items: center; gap: 40px 64px">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.24em; color: #D4A940; font-weight: 700">CONTACT</p>
+<h2 style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.5">お気軽にご相談ください</h2>
+<p style="margin: 0; font-size: 15px; color: #D3E3DF">不動産に関するお問い合わせは、お電話またはメールフォームよりご相談ください。</p>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-wrap: wrap; gap: 16px">
+<a href="tel:0528552699" style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 4px; padding: 22px 26px; background: #FFFFFF; color: #0F3B36; text-decoration: none">
+<span style="font-size: 12px; color: #545A66">お電話（10:00〜20:00／水曜定休）</span>
+<span style="font-size: 26px; font-weight: 700; letter-spacing: 0.06em">052-855-2699</span>
+</a>
+<a href="/contact/" style="flex: 1 1 240px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 26px; min-height: 64px; background: #D4A940; color: #0F3B36; text-decoration: none; font-weight: 700; font-size: 16px">メールフォームで相談
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14"></rect><path d="M3 7l9 6 9-6"></path></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer style="background: #0A2A26; color: #BFD3CE">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 32px 32px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.9">
+<img src="/assets/logo-horizontal.png" alt="NISSO CAPITAL" style="height: 56px; width: auto; display: block; margin-bottom: 8px; align-self: flex-start">
+<span>NISSOキャピタル株式会社</span>
+<span>〒460-0007 愛知県名古屋市中区新栄1丁目31-7 fビル新栄Ⅰ 2A</span>
+<span>TEL 052-855-2699 ／ FAX 052-855-4258</span>
+<span>宅地建物取引業 愛知県知事（1）第25237号</span>
+</div>
+<nav aria-label="フッターメニュー" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 48px; font-size: 14px; align-content: start">
+<a href="/" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">ホーム</a>
+<a href="/#about" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">会社概要</a>
+<a href="/services/" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">事業内容</a>
+<a href="/invest/" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">不動産投資について</a>
+<a href="/simulator/" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">収支シミュレーション</a>
+<a href="/contact/" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">お問い合わせ</a>
+<a href="/privacy/" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">個人情報保護方針</a>
+</nav>
+</div>
+<div style="border-top: 1px solid #1D4540; padding-top: 24px; font-size: 12px; color: #8FAAA4">© NISSO CAPITAL Co., Ltd. All Rights Reserved.</div>
+</div>
+</footer>
+
+</div>
+<script>
+(function(){
+  var DEFAULTS = { price:2000, down:100, rent:84000, vacancy:5, costs:12000, rate:2.0, years:35 };
+  var DEFS = [
+    { key:'price',   label:'物件価格',               unit:'万円',  min:500,   max:10000,  step:10,   hint:'500万円〜1億円' },
+    { key:'down',    label:'自己資金（頭金）',       unit:'万円',  min:0,     max:10000,  step:10,   hint:'物件価格のうち、ローンを使わずに支払う金額' },
+    { key:'rent',    label:'月額家賃',               unit:'円',    min:20000, max:500000, step:1000, hint:'満室時の家賃' },
+    { key:'vacancy', label:'空室率',                 unit:'%',     min:0,     max:30,     step:1,    hint:'1年のうち空室になる期間の割合の目安' },
+    { key:'costs',   label:'管理費・修繕積立金など', unit:'円/月', min:0,     max:80000,  step:500,  hint:'建物管理費・修繕積立金・賃貸管理手数料の合計' },
+    { key:'rate',    label:'ローン金利',             unit:'%',     min:0,     max:6,      step:0.05, hint:'年利。投資用ローンの金利は金融機関や審査で異なります' },
+    { key:'years',   label:'返済期間',               unit:'年',    min:5,     max:45,     step:1,    hint:'5〜45年' }
+  ];
+  var s = Object.assign({}, DEFAULTS);
+  var $ = function(id){ return document.getElementById(id); };
+  var fields = $('fields');
+
+  DEFS.forEach(function(d){
+    var el = document.createElement('div');
+    el.className = 'field';
+    el.innerHTML =
+      '<div class="row"><label for="r-'+d.key+'">'+d.label+'</label>' +
+      '<div class="num"><input type="number" id="n-'+d.key+'" aria-label="'+d.label+'（数値入力）" min="'+d.min+'" max="'+d.max+'" step="'+d.step+'"><span>'+d.unit+'</span></div></div>' +
+      '<input type="range" id="r-'+d.key+'" min="'+d.min+'" max="'+d.max+'" step="'+d.step+'">' +
+      '<span class="hint">'+d.hint+'</span>';
+    fields.appendChild(el);
+    fields.appendChild(Object.assign(document.createElement('div'), { style:'height:20px' }));
+    var onInput = function(e){
+      var v = Number(e.target.value);
+      if (!isFinite(v) || e.target.value === '') return;
+      v = Math.min(d.max, Math.max(d.min, v));
+      s[d.key] = v;
+      if (d.key === 'price' && s.down > v) s.down = v;
+      if (d.key === 'down' && v > s.price) s.down = s.price;
+      render();
+    };
+    el.querySelector('input[type=range]').addEventListener('input', onInput);
+    el.querySelector('input[type=number]').addEventListener('change', onInput);
+  });
+  fields.lastChild.remove();
+
+  $('reset').addEventListener('click', function(){ s = Object.assign({}, DEFAULTS); render(); });
+
+  function pay(loan, ratePct, years){
+    var n = years * 12; if (loan <= 0 || n <= 0) return 0;
+    var r = ratePct / 100 / 12; if (r === 0) return loan / n;
+    return loan * r / (1 - Math.pow(1 + r, -n));
+  }
+  function yen(n){ var v = Math.round(n); return (v < 0 ? '−' : '') + Math.abs(v).toLocaleString('ja-JP'); }
+  function signed(n){ var v = Math.round(n); return (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(v).toLocaleString('ja-JP'); }
+
+  function render(){
+    DEFS.forEach(function(d){
+      $('r-'+d.key).value = s[d.key];
+      $('n-'+d.key).value = s[d.key];
+      if (d.key === 'down') { $('r-down').max = s.price; $('n-down').max = s.price; }
+    });
+    var loan = Math.max(0, (s.price - s.down) * 10000);
+    var payment = pay(loan, s.rate, s.years);
+    var effRent = s.rent * (1 - s.vacancy / 100);
+    var monthly = effRent - s.costs - payment;
+    var stressPayment = pay(loan, s.rate + 1, s.years);
+    var stressMonthly = effRent - s.costs - stressPayment;
+    var priceYen = s.price * 10000;
+    var total = payment * s.years * 12;
+
+    var m = $('monthly');
+    m.innerHTML = signed(monthly) + '<small>円</small>';
+    m.classList.toggle('neg', monthly < 0);
+    $('monthlyNote').textContent = monthly >= 0
+      ? '家賃収入でローン返済と管理費等をまかなえる計算です。'
+      : '毎月この金額の持ち出しが発生する計算です。';
+    $('yearly').textContent = signed(monthly * 12) + '円';
+    $('after').textContent = signed(effRent - s.costs) + '円';
+
+    var max = Math.max(effRent, payment + s.costs, 1);
+    var w = function(v){ return Math.max(0, v / max * 100).toFixed(2) + '%'; };
+    $('barRent').style.width = w(effRent); $('barRent').textContent = '家賃 ' + yen(effRent) + '円';
+    $('barLoan').style.width = w(payment); $('barLoan').textContent = '返済 ' + yen(payment) + '円';
+    $('barCost').style.width = w(s.costs);
+    $('barNote').textContent = '家賃は空室率を差し引いた平均値です。管理費等は ' + yen(s.costs) + '円／月。';
+
+    $('gy').textContent = (priceYen > 0 ? s.rent * 12 / priceYen * 100 : 0).toFixed(2) + '%';
+    $('ny').textContent = (priceYen > 0 ? (effRent - s.costs) * 12 / priceYen * 100 : 0).toFixed(2) + '%';
+    $('loan').textContent = yen(loan) + '円';
+    $('pay').textContent = yen(payment) + '円';
+    $('total').textContent = yen(total) + '円（' + yen(Math.max(0, total - loan)) + '円）';
+
+    $('stressTitle').textContent = '金利が1%上がった場合（' + (s.rate + 1).toFixed(2) + '%）';
+    $('stressPay').textContent = yen(stressPayment) + '円';
+    var sm = $('stressMonthly');
+    sm.textContent = signed(stressMonthly) + '円';
+    sm.className = stressMonthly < 0 ? 'neg' : '';
+  }
+  render();
+})();
+</script>
+</body>
+</html>
