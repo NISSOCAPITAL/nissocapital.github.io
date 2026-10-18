@@ -192,7 +192,7 @@ details[open] summary svg{transform:rotate(180deg)}
 .cta{background:#FFFFFF;padding:128px 0 136px}
 .cta__in{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:64px;align-items:stretch}
 .cta__photo{margin:0;min-height:100%;overflow:hidden;background:var(--mist)}
-.cta__photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.cta__photo img{width:100%;height:100%;object-fit:cover;object-position:30% center;display:block}
 .cta__main{display:flex;flex-direction:column;justify-content:center;gap:32px}
 .cta__head{display:flex;flex-direction:column;gap:22px}
 .cta__head .label{font-size:15px;letter-spacing:.32em}
