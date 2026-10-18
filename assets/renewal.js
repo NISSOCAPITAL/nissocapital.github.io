@@ -64,5 +64,5 @@
   ['click', 'wheel', 'touchstart'].forEach(function (t) { fv.addEventListener(t, end, { passive: true }); });
   document.addEventListener('keydown', onKey);
   if (mq.addEventListener) mq.addEventListener('change', end);
-  timer = setTimeout(end, 3900);
+  timer = setTimeout(end, 4100);
 })();

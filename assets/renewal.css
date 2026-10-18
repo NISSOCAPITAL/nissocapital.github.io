@@ -107,7 +107,7 @@ details[open] summary svg{transform:rotate(180deg)}
 .rise-play #top .ph-full{animation:reveal .8s cubic-bezier(.4,0,.2,1) 1.55s both}
 .rise-play #top .cp{animation:fadeUp 1.5s ease-out 2s both}
 .rise-play #top .cp2{animation:fadeIn 1.5s ease-out 2.1s both}
-.rise-play #top .ln{animation:riseUp .6s cubic-bezier(.2,.7,.2,1) 2.1s both}
+.rise-play #top .ln{animation:riseUp 1.6s cubic-bezier(.25,.6,.25,1) 2.1s both}
 .rise-play #top .ln--2{animation-delay:2.35s}
 @media (prefers-reduced-motion:reduce){.rise-play #top *{animation:none!important}.rise-play .rise-svg{display:none}}
 
