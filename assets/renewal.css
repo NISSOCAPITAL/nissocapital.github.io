@@ -269,6 +269,8 @@ details[open] summary svg{transform:rotate(180deg)}
 }
 @media (min-width:1024px) and (max-width:1279px){.fv__text{gap:24px}}
 
+@media (min-width:1024px){.company{padding-bottom:64px}.company+.cta{padding-top:56px}}
+
 /* ---------- 1199px以下：ハンバーガーメニュー ---------- */
 @media (max-width:1199px){
 .site-header__in{height:64px;padding:0 16px}
