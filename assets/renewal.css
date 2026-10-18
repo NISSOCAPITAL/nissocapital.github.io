@@ -144,8 +144,9 @@ details[open] summary svg{transform:rotate(180deg)}
 .study__t{margin:0;font-family:var(--f-serif);font-size:24px;font-weight:700;color:#FFFFFF}
 .study__d{margin:0;flex:1 1 380px;font-size:15px;color:var(--on-dark)}
 .study__links{flex:1 1 100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px;max-width:720px}
-.study__link{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:0 18px;border:1px solid rgba(255,255,255,.22);color:var(--on-dark);text-decoration:none;font-size:14px}
-.study__link:hover{border-color:var(--gold);color:#FFFFFF}
+.study__link{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:0 18px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:14px;font-weight:500}
+.study__link:hover{background:rgba(212,169,64,.12);color:#E0BA5C}
+.nw{white-space:nowrap}
 .band__in{padding-top:140px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:end}
 .band__text{display:flex;flex-direction:column;gap:26px}
 .band__text p.band__lead{margin:0;max-width:600px;font-size:16px;line-height:2.05;color:var(--on-dark)}
@@ -329,7 +330,7 @@ details[open] summary svg{transform:rotate(180deg)}
 .step h3{font-size:20px}
 .step p{font-size:14px;line-height:1.9}
 .study{margin-top:0;padding-top:20px;flex-direction:column;gap:6px}
-.study__t{font-size:18px}
+.study__t{font-size:clamp(14px,4.2vw,18px);line-height:1.7}
 .study__d{flex:none;font-size:14px}
 .study__links{grid-template-columns:1fr;gap:10px;margin-top:10px;width:100%;max-width:none;flex:none}
 .study__link{font-size:13px}
