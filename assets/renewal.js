@@ -13,6 +13,19 @@
   }
 
   var root = document.documentElement;
+  var steps = document.querySelector('.steps');
+  if (steps && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    root.classList.add('reveal-ready');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        steps.querySelectorAll('.step').forEach(function (s) { s.classList.add('is-in'); });
+        io.disconnect();
+      });
+    }, { threshold: 0.2 });
+    io.observe(steps);
+  }
+
   var fv = document.getElementById('top');
   if (!fv || !root.classList.contains('rise-play')) return;
 
