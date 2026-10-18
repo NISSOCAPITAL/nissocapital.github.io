@@ -13,7 +13,7 @@
   }
 
   var root = document.documentElement;
-  var groups = [['.steps', '.step'], ['.svc-rows', '.svc-row']];
+  var groups = [['.steps', '.step'], ['.svc-rows', '.svc-row'], ['.band', '.band__photo']];
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     groups.forEach(function (g) {
       var box = document.querySelector(g[0]);

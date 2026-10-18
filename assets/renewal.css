@@ -145,9 +145,16 @@ details[open] summary svg{transform:rotate(180deg)}
 .band__in{padding-top:140px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:end}
 .band__text{display:flex;flex-direction:column;gap:26px}
 .band__text p.band__lead{margin:0;max-width:600px;font-size:16px;line-height:2.05;color:var(--on-dark)}
-.band__side{display:flex;flex-direction:column;gap:20px}
-.band__photo{margin:0;aspect-ratio:4/3;overflow:hidden;background:var(--teal-2)}
-.band__photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.band{min-height:760px}
+.band .dark__rule{z-index:1}
+.band__text{position:relative;z-index:2}
+.band__side{position:static;display:flex;flex-direction:column;justify-content:flex-end;align-self:stretch}
+.band__photo{position:absolute;z-index:0;top:0;right:0;bottom:0;width:48%;margin:0;overflow:hidden;background:var(--teal-2);clip-path:polygon(16% 0,100% 0,100% 100%,0 100%)}
+.band__photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transform-origin:50% 0}
+.band__photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,59,54,.85) 0%,rgba(15,59,54,.35) 22%,rgba(15,59,54,0) 48%),linear-gradient(0deg,rgba(15,59,54,.75) 0%,rgba(15,59,54,0) 38%)}
+.band__side .band__link{position:relative;z-index:2;background:rgba(11,47,43,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.reveal-ready .band__photo img{transform:scale(1.14);transition:transform 6s cubic-bezier(.2,.6,.2,1)}
+.reveal-ready .band__photo.is-in img{transform:none}
 .band__link{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;padding:0 28px;border:1px solid var(--gold);color:#FFFFFF;text-decoration:none;font-weight:700;font-size:17px}
 .band__link:hover{background:rgba(212,169,64,.12);color:#FFFFFF}
 
@@ -324,6 +331,12 @@ details[open] summary svg{transform:rotate(180deg)}
 .band__text p.band__lead{font-size:14px;line-height:2}
 .band__link{min-height:60px;padding:0 22px;font-size:16px}
 .dark.band .dark__rule{display:none}
+.band{min-height:0}
+.band__in{padding-bottom:56px}
+.band__side{display:block}
+.band__photo{position:relative;width:auto;margin:8px -20px 0;aspect-ratio:4/5;clip-path:none}
+.band__photo::after{background:linear-gradient(180deg,#0F3B36 0%,rgba(15,59,54,0) 22%,rgba(15,59,54,0) 55%,#0F3B36 100%)}
+.band__side .band__link{margin-top:-72px}
 
 .svc-list-sec{padding:64px 0 72px}
 .svc-list-sec__in{gap:28px}
