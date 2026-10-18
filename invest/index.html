@@ -17,40 +17,27 @@
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap">
-<style>
-body{margin:0}
-summary::-webkit-details-marker{display:none}
-a{color:#0F3B36}a:hover{color:#2B6B62}
-a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid #D4A940;outline-offset:2px}
-img{max-width:100%}
-details[open] summary svg{transform:rotate(180deg)}
-</style>
-<link rel="stylesheet" href="/assets/mobile.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=Barlow+Condensed:wght@500;600&amp;display=swap">
+<link rel="stylesheet" href="/assets/renewal.css">
 </head>
 <body>
-<div style="font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Yu Gothic', sans-serif; color: #1A1D23; background: #FFFFFF; line-height: 1.85; letter-spacing: 0.02em">
-
-<!-- Header -->
-<header style="border-bottom: 1px solid #E1E7E5; background: #FFFFFF">
-<div style="max-width: 1240px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
-<a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0F3B36">
-<img src="/assets/logo-horizontal.png" alt="NISSO CAPITAL" style="height: 52px; width: auto; display: block">
-<span style="font-size: 12px; color: #545A66; letter-spacing: 0.08em; padding-left: 14px; border-left: 1px solid #E1E7E5; line-height: 1.4">NISSOキャピタル<br>株式会社</span>
-</a>
-<button type="button" class="nav-btn" aria-label="メニューを開く" aria-controls="gnav" aria-expanded="false" onclick="var o=this.closest('header').classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
-<nav id="gnav" aria-label="メインメニュー" onclick="if(event.target.closest('a')){var h=this.closest('header');h.classList.remove('nav-open');h.querySelector('.nav-btn').setAttribute('aria-expanded',false)}" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 14px; font-weight: 500">
-<a href="/#about" style="text-decoration: none; padding: 10px 0">会社概要</a>
-<a href="/services/" style="text-decoration: none; padding: 10px 0">事業内容</a>
-<a href="/invest/" aria-current="page" style="text-decoration: none; padding: 10px 0; border-bottom: 2px solid #0F3B36">不動産投資について</a>
-<a href="/simulator/" style="text-decoration: none; padding: 10px 0">シミュレーション</a>
-<a href="/#company" style="text-decoration: none; padding: 10px 0">会社情報</a>
-<a href="/privacy/" style="text-decoration: none; padding: 10px 0">個人情報保護方針</a>
-<a href="/contact/" style="text-decoration: none; padding: 12px 22px; background: #0F3B36; color: #FFFFFF">お問い合わせ</a>
+<header class="site-header">
+<div class="site-header__in">
+<a class="brand" href="/"><img src="/assets/logo-horizontal.png" alt="NISSO CAPITAL" width="720" height="262"><span class="brand__name">NISSOキャピタル<br>株式会社</span></a>
+<button type="button" class="nav-btn" aria-label="メニューを開く" aria-controls="gnav" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav id="gnav" class="gnav" aria-label="メインメニュー">
+<a href="/#about">会社概要</a>
+<a href="/services/">事業内容</a>
+<a href="/invest/" aria-current="page">不動産投資について</a>
+<a href="/simulator/">シミュレーション</a>
+<a href="/#company">会社情報</a>
+<a href="/privacy/">個人情報保護方針</a>
+<a class="gnav__cta" href="/contact/">お問い合わせ</a>
 </nav>
 </div>
 </header>
-
+<main>
 <!-- Page title -->
 <section style="background: #0F3B36; color: #FFFFFF">
 <div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 64px; display: flex; flex-direction: column; gap: 14px">
@@ -71,29 +58,26 @@ details[open] summary svg{transform:rotate(180deg)}
 </nav>
 
 <!-- ===== MERIT ===== -->
-<section id="merit" style="background: #F2F5F4">
+<section id="merit" style="background: #FFFFFF">
 <div style="max-width: 1080px; margin: 0 auto; padding: 104px 32px 40px; display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 12px; text-align: center; align-items: center">
 <p style="margin: 0; font-size: 13px; letter-spacing: 0.24em; color: #7A5F38; font-weight: 700">MERIT</p>
 <h2 style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: clamp(28px, 3vw, 40px); line-height: 1.5; color: #0F3B36">不動産投資の5つのメリット</h2>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px">
-<a href="#m1" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 20px 12px; background: #FFFFFF; text-decoration: none"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38">01</span><span style="font-weight: 700; font-size: 17px">資産運用</span></a>
-<a href="#m2" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 20px 12px; background: #FFFFFF; text-decoration: none"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38">02</span><span style="font-weight: 700; font-size: 17px">保険</span></a>
-<a href="#m3" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 20px 12px; background: #FFFFFF; text-decoration: none"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38">03</span><span style="font-weight: 700; font-size: 17px">年金</span></a>
-<a href="#m4" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 20px 12px; background: #FFFFFF; text-decoration: none"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38">04</span><span style="font-weight: 700; font-size: 17px">節税</span></a>
-<a href="#m5" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 20px 12px; background: #FFFFFF; text-decoration: none"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38">05</span><span style="font-weight: 700; font-size: 17px">相続</span></a>
+<a href="#m1" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 20px 12px; background: #F2F5F4; text-decoration: none"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38">01</span><span style="font-weight: 700; font-size: 17px">資産運用</span></a>
+<a href="#m2" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 20px 12px; background: #F2F5F4; text-decoration: none"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38">02</span><span style="font-weight: 700; font-size: 17px">保険</span></a>
+<a href="#m3" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 20px 12px; background: #F2F5F4; text-decoration: none"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38">03</span><span style="font-weight: 700; font-size: 17px">年金</span></a>
+<a href="#m4" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 20px 12px; background: #F2F5F4; text-decoration: none"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38">04</span><span style="font-weight: 700; font-size: 17px">節税</span></a>
+<a href="#m5" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 20px 12px; background: #F2F5F4; text-decoration: none"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38">05</span><span style="font-weight: 700; font-size: 17px">相続</span></a>
 </div>
 </div>
 
 <!-- 01 資産運用 -->
-<article id="m1" style="max-width: 1080px; margin: 0 auto; padding: 40px 32px">
-<div style="background: #FFFFFF; padding: clamp(28px, 5vw, 64px); display: flex; flex-direction: column; gap: 28px">
-<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 24px; border-bottom: 1px solid #E1E7E5; padding-bottom: 24px">
-<span style="font-family: 'Shippori Mincho B1', serif; font-size: 56px; line-height: 1; color: #D4A940">01</span>
-<h3 style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: clamp(26px, 2.6vw, 34px); color: #0F3B36">資産運用</h3>
-</div>
-<p style="margin: 0; font-size: 18px; font-weight: 500; color: #0F3B36; line-height: 1.9">不動産投資による資産運用は、ローンを組むことができます。<br>頭金などの初期費用を抑えられるので、少額の資金からでも利益を出すことが期待できます。</p>
+<article id="m1" class="inv-art" style="max-width: 1080px; margin: 0 auto; padding: 88px 32px 40px">
+<div class="inv-art__box" style="position: relative; display: flex; flex-direction: column; gap: 28px; padding-left: 56px; border-left: 1px solid #C9D4D1">
+<div class="inv-art__head" style="display: flex; align-items: flex-end; gap: 24px; padding-bottom: 18px; border-bottom: 2px solid #0F3B36"><span class="inv-art__num" aria-hidden="true" style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 500; font-size: 88px; line-height: 0.82; color: #0F3B36">01</span><div style="display: flex; flex-direction: column; gap: 2px"><h3 class="inv-art__title" style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 36px; font-weight: 800; color: #0F3B36; line-height: 1.2">資産運用</h3></div></div>
+<p class="inv-art__lead" style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 22px; font-weight: 700; color: #0F3B36; line-height: 1.75">不動産投資による資産運用は、ローンを組むことができます。<br>頭金などの初期費用を抑えられるので、少額の資金からでも利益を出すことが期待できます。</p>
 
 <h4 style="margin: 16px 0 0; font-size: 20px; color: #0F3B36; padding-left: 16px; border-left: 3px solid #0F3B36; line-height: 1.5">ローリスク・ロングリターンの資産運用</h4>
 <p style="margin: 0; font-size: 16px">不動産投資は他の金融商品と比べ、ローリスクかつロングリターンで資産運用を行うことができます。金利や景気が変動するなかでも、賃料相場は比較的安定していることから、不動産投資は表面利回り年4〜8%程度の利回りが期待できます。</p>
@@ -130,13 +114,10 @@ details[open] summary svg{transform:rotate(180deg)}
 </article>
 
 <!-- 02 保険 -->
-<article id="m2" style="max-width: 1080px; margin: 0 auto; padding: 40px 32px">
-<div style="background: #FFFFFF; padding: clamp(28px, 5vw, 64px); display: flex; flex-direction: column; gap: 28px">
-<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 24px; border-bottom: 1px solid #E1E7E5; padding-bottom: 24px">
-<span style="font-family: 'Shippori Mincho B1', serif; font-size: 56px; line-height: 1; color: #D4A940">02</span>
-<h3 style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: clamp(26px, 2.6vw, 34px); color: #0F3B36">保険</h3>
-</div>
-<p style="margin: 0; font-size: 18px; font-weight: 500; color: #0F3B36; line-height: 1.9">何かあった時の生命保険や、医療保険としても活用できます。</p>
+<article id="m2" class="inv-art" style="max-width: 1080px; margin: 0 auto; padding: 88px 32px 40px">
+<div class="inv-art__box" style="position: relative; display: flex; flex-direction: column; gap: 28px; padding-left: 56px; border-left: 1px solid #C9D4D1">
+<div class="inv-art__head" style="display: flex; align-items: flex-end; gap: 24px; padding-bottom: 18px; border-bottom: 2px solid #0F3B36"><span class="inv-art__num" aria-hidden="true" style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 500; font-size: 88px; line-height: 0.82; color: #0F3B36">02</span><div style="display: flex; flex-direction: column; gap: 2px"><h3 class="inv-art__title" style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 36px; font-weight: 800; color: #0F3B36; line-height: 1.2">保険</h3></div></div>
+<p class="inv-art__lead" style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 22px; font-weight: 700; color: #0F3B36; line-height: 1.75">何かあった時の生命保険や、医療保険としても活用できます。</p>
 
 <h4 style="margin: 16px 0 0; font-size: 20px; color: #0F3B36; padding-left: 16px; border-left: 3px solid #0F3B36; line-height: 1.5">もしもの時の生命保険としても</h4>
 <p style="margin: 0; font-size: 16px">不動産を購入しローンを組んだ場合、団体信用生命保険にも加入します。これによりオーナー様が亡くなられたり、高度障害状態になられたりした場合でも、残りのローンは保険会社が支払うため、ご家族への負担がなく、さらに家賃という安定収入を残すことができます。商品によっては介護が必要になった際に保険金が支払われるものや、特定の病気に対応した医療保険として活用できるものもあります。</p>
@@ -171,13 +152,10 @@ details[open] summary svg{transform:rotate(180deg)}
 </article>
 
 <!-- 03 年金 -->
-<article id="m3" style="max-width: 1080px; margin: 0 auto; padding: 40px 32px">
-<div style="background: #FFFFFF; padding: clamp(28px, 5vw, 64px); display: flex; flex-direction: column; gap: 28px">
-<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 24px; border-bottom: 1px solid #E1E7E5; padding-bottom: 24px">
-<span style="font-family: 'Shippori Mincho B1', serif; font-size: 56px; line-height: 1; color: #D4A940">03</span>
-<h3 style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: clamp(26px, 2.6vw, 34px); color: #0F3B36">年金</h3>
-</div>
-<p style="margin: 0; font-size: 18px; font-weight: 500; color: #0F3B36; line-height: 1.9">今後公的年金だけに頼っていては安心した老後生活を送ることが難しい時代です。家賃収入を個人年金として補うことができます。</p>
+<article id="m3" class="inv-art" style="max-width: 1080px; margin: 0 auto; padding: 88px 32px 40px">
+<div class="inv-art__box" style="position: relative; display: flex; flex-direction: column; gap: 28px; padding-left: 56px; border-left: 1px solid #C9D4D1">
+<div class="inv-art__head" style="display: flex; align-items: flex-end; gap: 24px; padding-bottom: 18px; border-bottom: 2px solid #0F3B36"><span class="inv-art__num" aria-hidden="true" style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 500; font-size: 88px; line-height: 0.82; color: #0F3B36">03</span><div style="display: flex; flex-direction: column; gap: 2px"><h3 class="inv-art__title" style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 36px; font-weight: 800; color: #0F3B36; line-height: 1.2">年金</h3></div></div>
+<p class="inv-art__lead" style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 22px; font-weight: 700; color: #0F3B36; line-height: 1.75">今後公的年金だけに頼っていては安心した老後生活を送ることが難しい時代です。家賃収入を個人年金として補うことができます。</p>
 
 <h4 style="margin: 16px 0 0; font-size: 20px; color: #0F3B36; padding-left: 16px; border-left: 3px solid #0F3B36; line-height: 1.5">家賃収入を個人年金として利用するポイント</h4>
 <p style="margin: 0; font-size: 16px">公的年金支給年齢の引き上げ、年金支給額の減額、高齢者への医療費・介護費用の個人負担の増加など不安要因が日々増加しています。一方で、現役労働人口は減少し、公的年金制度の破綻が現実味を帯びてきています。今後公的年金だけに頼っていては安心した老後生活を送ることが難しくなってきています。</p>
@@ -234,15 +212,11 @@ details[open] summary svg{transform:rotate(180deg)}
 </div>
 </div>
 </article>
-
 <!-- 04 節税 -->
-<article id="m4" style="max-width: 1080px; margin: 0 auto; padding: 40px 32px">
-<div style="background: #FFFFFF; padding: clamp(28px, 5vw, 64px); display: flex; flex-direction: column; gap: 28px">
-<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 24px; border-bottom: 1px solid #E1E7E5; padding-bottom: 24px">
-<span style="font-family: 'Shippori Mincho B1', serif; font-size: 56px; line-height: 1; color: #D4A940">04</span>
-<h3 style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: clamp(26px, 2.6vw, 34px); color: #0F3B36">節税</h3>
-</div>
-<p style="margin: 0; font-size: 18px; font-weight: 500; color: #0F3B36; line-height: 1.9">不動産投資による家賃収入は、会社員や公務員の方でも確定申告を行うことができ、所得税の還付や住民税が減額されるため、節税につながります。</p>
+<article id="m4" class="inv-art" style="max-width: 1080px; margin: 0 auto; padding: 88px 32px 40px">
+<div class="inv-art__box" style="position: relative; display: flex; flex-direction: column; gap: 28px; padding-left: 56px; border-left: 1px solid #C9D4D1">
+<div class="inv-art__head" style="display: flex; align-items: flex-end; gap: 24px; padding-bottom: 18px; border-bottom: 2px solid #0F3B36"><span class="inv-art__num" aria-hidden="true" style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 500; font-size: 88px; line-height: 0.82; color: #0F3B36">04</span><div style="display: flex; flex-direction: column; gap: 2px"><h3 class="inv-art__title" style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 36px; font-weight: 800; color: #0F3B36; line-height: 1.2">節税</h3></div></div>
+<p class="inv-art__lead" style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 22px; font-weight: 700; color: #0F3B36; line-height: 1.75">不動産投資による家賃収入は、会社員や公務員の方でも確定申告を行うことができ、所得税の還付や住民税が減額されるため、節税につながります。</p>
 
 <h4 style="margin: 16px 0 0; font-size: 20px; color: #0F3B36; padding-left: 16px; border-left: 3px solid #0F3B36; line-height: 1.5">不動産所得で確定申告を</h4>
 <p style="margin: 0; font-size: 16px">不動産投資による家賃収入は、会社員や公務員の方でも確定申告を行うことができます。ローンの利息や管理費、固定資産税、減価償却費などが必要経費として認められます。給与所得と不動産所得の「損益通算」によって課税所得が少なくなり、確定申告することで所得税の還付や住民税が減額されるため、節税につながります。</p>
@@ -294,13 +268,10 @@ details[open] summary svg{transform:rotate(180deg)}
 </article>
 
 <!-- 05 相続 -->
-<article id="m5" style="max-width: 1080px; margin: 0 auto; padding: 40px 32px 112px">
-<div style="background: #FFFFFF; padding: clamp(28px, 5vw, 64px); display: flex; flex-direction: column; gap: 28px">
-<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 24px; border-bottom: 1px solid #E1E7E5; padding-bottom: 24px">
-<span style="font-family: 'Shippori Mincho B1', serif; font-size: 56px; line-height: 1; color: #D4A940">05</span>
-<h3 style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: clamp(26px, 2.6vw, 34px); color: #0F3B36">相続</h3>
-</div>
-<p style="margin: 0; font-size: 18px; font-weight: 500; color: #0F3B36; line-height: 1.9">オーナー様にもしものことがあり相続税が発生した場合、資産を現金ではなく不動産として相続することで相続税評価額を大幅に圧縮することができます。</p>
+<article id="m5" class="inv-art" style="max-width: 1080px; margin: 0 auto; padding: 88px 32px 112px">
+<div class="inv-art__box" style="position: relative; display: flex; flex-direction: column; gap: 28px; padding-left: 56px; border-left: 1px solid #C9D4D1">
+<div class="inv-art__head" style="display: flex; align-items: flex-end; gap: 24px; padding-bottom: 18px; border-bottom: 2px solid #0F3B36"><span class="inv-art__num" aria-hidden="true" style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 500; font-size: 88px; line-height: 0.82; color: #0F3B36">05</span><div style="display: flex; flex-direction: column; gap: 2px"><h3 class="inv-art__title" style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 36px; font-weight: 800; color: #0F3B36; line-height: 1.2">相続</h3></div></div>
+<p class="inv-art__lead" style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 22px; font-weight: 700; color: #0F3B36; line-height: 1.75">オーナー様にもしものことがあり相続税が発生した場合、資産を現金ではなく不動産として相続することで相続税評価額を大幅に圧縮することができます。</p>
 
 <h4 style="margin: 16px 0 0; font-size: 20px; color: #0F3B36; padding-left: 16px; border-left: 3px solid #0F3B36; line-height: 1.5">もしもの時の相続税対策にも</h4>
 <p style="margin: 0; font-size: 16px">オーナー様にもしものことがあり相続税が発生した場合、不動産の建築部分は購入価格の約50%、土地部分は公示価格の約80%が評価額となり、相続税評価額を大幅に圧縮することができます。さらに、マンションが賃貸住宅として使用されていた場合、市場価格の3分の1になる場合もあります。つまり、資産を現金ではなく不動産として相続することで課税対象額を下げることができます。</p>
@@ -385,21 +356,18 @@ details[open] summary svg{transform:rotate(180deg)}
 <h2 style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: clamp(28px, 3vw, 40px); line-height: 1.5; color: #0F3B36">不動産投資についてよくあるご質問</h2>
 </div>
 <div style="display: flex; flex-direction: column; gap: 10px">
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">不動産投資は初めての人でも出来ますか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">弊社には万全のサポート体制があり、初めての方でも安心して不動産投資をはじめていただけます。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">弊社では日頃お忙しいオーナー様の手間を解消するために、安心して物件を所有いただけるサポート体制を整えております。購入後のわずらわしい管理・運営業務を弊社で行い、オーナー様ご自身で行う必要はありません。
 オーナー様は普段の生活を変えることなく、振り込まれた賃料の確認をするだけなので、安心してお仕事に専念していただけます。
 弊社のお客様は専門知識をお持ちでなくてもサポートがついた形で投資マンションオーナー様へとなれるシステムをご用意しております。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">どのような方が不動産投資を始めていますか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">会社員、公務員、医師、薬剤師、弁護士、自営業、退職者と様々な職業の方が始めておられます。ご年齢も20代〜70代と幅広い層の方々がいらっしゃいます。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">不動産投資と聞くと、高収入の方が始めてるイメージがあるかもしれませんが、区分マンションの1部屋からはじめられるので、どんな職業の方でもスタートしていただけます。実際に弊社のオーナー様も、全国各地の一般会社員、OL、公務員、医師、薬剤師、弁護士、税理士などの専門職、個人事業主の方々と職業は様々です。将来の資産形成・資産運用を考えて購入されたり、長期的に安定した家賃収入の確保や生命保険代わりとして堅実な目的で購入される方が多くいらっしゃいます。また、退職金の運用目的で購入される退職者の方も多数いらっしゃいます。
 
 その方によって、不動産の運用方法なども変わりますので各オーナー様にあったご提案をさせて頂きます。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">なぜ都市部のマンションなのですか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">都市部の地価は、全国的に見ても上昇傾向が続いています。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">国土交通省が発表した2026年の公示地価では、大阪圏は前年比3.8%、名古屋圏は2.3%上昇しており、都市部を中心に堅調な推移が続いております。
@@ -410,17 +378,14 @@ details[open] summary svg{transform:rotate(180deg)}
 都市部は交通利便性・生活利便性が高く、単身者・共働き世帯・転勤需要など、安定した賃貸ニーズが見込める点も特徴です。
 このように、大阪・神戸・名古屋といった主要都市は、将来的な発展性と安定した賃貸需要の両面から、マンション経営に適した市場であると考えられています。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">近くに住んでいなくても、関西・名古屋の投資マンションを購入しても大丈夫ですか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">多くのオーナー様が他府県にお住まいの方なのでご安心ください。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">オーナー様が遠方にお住まいの場合でも、弊社が日々の賃貸管理の業務を代行しており、建物管理は専門の管理会社へ委託しております。実際、東京をはじめ北海道から沖縄までの全国各地のお客様が弊社のオーナー様であるので、関西・名古屋に来られることが少ない方でも安心してお任せいただいております。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">どのような物件を選ぶと良いのですか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">都心部で駅に近く、品質の高い物件が安定した家賃を取れるので安心です。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">弊社ではオーナー様のメリットを確保するために、賃貸需要が高いエリアに限定して物件をご紹介しております。安定した家賃を得るには適正な範囲でより高い家賃設定が出来ること、賃貸需要が高いエリアで人口が増加を続けていること、生活の利便性が高く、建物自体のグレードも優れていること。これらを踏まえると都心部で駅に近い物件がオススメです。立地条件の良い、グレードの高い物件だと将来的にも入居者の需要が長く続くと考えられます。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">マンションの寿命はどれくらいですか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">定期的な修繕を行うことで90年以上長持ちします。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">鉄筋コンクリート造（RC造）のマンションは耐久性が高く、建物の劣化要因となるコンクリートの中性化も、定期的な大規模修繕や防水工事・外壁補修などを行うことで進行を抑えることができます。特に外壁タイル仕様のマンションは、雨風からコンクリートを保護するため、耐久性が高い傾向があります。
@@ -431,7 +396,6 @@ details[open] summary svg{transform:rotate(180deg)}
 
 そのため、長期修繕計画が整っているマンションや、管理体制の良い物件を選ぶことが重要です。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">物件を購入するときに、物件代金以外でどのようなお金がかかりますか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">登記費用、火災保険料、などのお金がかかります。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">物件をご購入の際には
@@ -446,50 +410,41 @@ details[open] summary svg{transform:rotate(180deg)}
 詳しくは担当スタッフへお問い合わせください。
 また、登記完了後は固定資産税・都市計画税、不動産取得税などがかかります。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">購入する会社によって違いがあるのですか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">不動産購入後のサポートも含め信頼できる会社を選ぶことが大切です。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">不動産会社によって提携の金融機関、サポートシステムは全く異なります。
 ご自身の希望や目的を実現するために信頼のできる会社を選ぶことが大切です。弊社では、物件購入のサポートだけでなく、入居管理業務、リフォーム業務などの賃貸管理業務、収支改善、物件の売却、相続などマンション経営に関わるあらゆる面でオーナー様のサポート体制を整えております。ご購入前でもお気軽にご相談ください。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">毎年の確定申告は専門知識が必要で難しいのではないですか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">思ってる以上に簡単です。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">自営業者様の行う「青色申告」と違い、マンション経営では領収書・明細等の添付義務のない「白色申告」で確定申告を行え、不動産投資の確定申告をされる方にも分かりやすくアドバイスさせていただいておりますので、多くのオーナー様がご自身で確定申告を行っていらっしゃいます。また、ご希望の方には弊社が提携している経験豊富な税理士を斡旋し、サポートさせていただきます。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">補修や修繕などにお金がかかるのではないですか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">マンションの共用部は修繕積立金で修繕し、お部屋の内部は原則オーナー様のご負担になります。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">多くのマンションでは長期修繕積立計画に基づいて、定期的に共用部分（外壁、エントランス、エレベーター等）の修繕を行います。お部屋内部のクロスの張り替えやクリーニング等は原則オーナー様のご負担ですが、入居者様からの敷金・礼金・火災保険等から賄えることもあります。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">火災や地震などが起きても大丈夫ですか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">建築基準法では震度7程度では倒壊しないことが規定となっており、新耐震基準のマンションであれば安心です。さらには万一の際の保険があります。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">弊社でご紹介する不動産の多くが新耐震基準（1981年制定　改定建築基準法）を満たし、耐久性・耐震性の高い建築構造を基本としております。同様の不動産の場合、阪神大震災・東日本大震災でも倒壊等の被害はほとんど受けておりません。また万一の際のリスク回避の手段として「地震保険」もご用意しております。火災に関しても、「火災保険」に加入していただくため保険で対応できます。木造ではなくコンクリート造のマンションは耐震性・耐火性に優れているため、倒壊や全焼の心配はほとんどありません。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">将来的にマンションの資産価値や家賃は下がらないですか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">当然下がりますが、立地や物件のグレードによります。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">株やFXなどの投資と比べ、実物資産となる不動産は金利の変動をはじめとした経済環境の影響を受けにくく、長期収入が期待できる資産運用だからこそ、マンション経営は選ばれています。インフレ時は物の価値が上がるため家賃は上がりやすくなり、デフレの状況でも家賃は下がりにくいと言われています。需要の高い都心部のマンションの場合は、立地条件、マンションのグレードが高ければ家賃は大きく下がらず、築年数が経っても、長期修繕計画がしっかりしている物件であれば、大規模修繕や定期的な修繕を行っているので、建物の美観を保つことができます。お部屋の内部も入居者の入れ替わりのタイミングでリフォームをすることで新築のような美しさを維持できます。マンション経営は長期的に見ても比較的リスクの少ない資産運用です。
 
 市場価格だけではなく、不動産の強みは現物資産なのでリフォーム、リノベーションすることで付加価値をつけることも可能です。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">もし、管理会社が倒産した場合はどうなりますか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">家賃収入が途絶えたりはせず、管理会社を変更いただくだけです。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">万一、管理会社が倒産しても、マンションは実物資産ですので家賃収入が途絶えることはありません。証券や債券とは異なり、物件の所有権はご購入いただいたオーナー様にあります。賃貸管理や建物管理については、同様の業務を取り扱う会社に委託先を変更していただくことになります。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">将来、ローンの金利が大幅に上がる可能性はありますか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">金利が急激に上がる可能性は少ないです。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">不動産投資専用のローンの場合、一般的な商品として変動金利が多くあげられます。金融機関により金利が上昇しても5年間は毎月の返済額が変わらないなどのルールを設けているところもあります。ローンを組む際は目先の支払いだけでなく、将来のことも考え余裕を持った資金計画が大切です。弊社ではご購入後も一部繰り上げ返済など利息負担を軽減するための適切な返済計画をご提案いたします。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">少子化が進んでいて、空室リスクが不安ですが、大丈夫ですか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">都心部エリアでは賃貸マンションの需要は今後も増えていくと予想されます。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">賃貸マンションというと、学生が就学中だけ住んでいるというイメージがあるかもしれません。ですが、近年では晩婚化や未婚率の上昇により独身者が増加しています。2020年の国勢調査では、単独世帯が38.1%と一番多く、シングルのサラリーマンやOLなど単身世帯者数は増え、都心エリアでは都市型マンションを必要とする人々のニーズも増加しています。さらに単独世帯の約64%が賃貸住宅に居住（都心部では約7割）しており、この層の増加は賃貸需要を支える直接的な要因です。不動産を購入せず生涯賃貸に住む人や、今後の高齢の単身者も増加に伴い、賃貸需要はますます増えていくと予想されます。また、空室リスクの不安を解消するための取組として、弊社の取り扱う物件は市場調査をもとに賃貸需要の高いエリアを厳選し、継続的な入居者募集を徹底しています。</p></div></div>
 </details>
-
 <details style="background: #FFFFFF">
 <summary style="display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 14px 24px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 700; color: #0F3B36"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #7A5F38; flex: none">Q.</span><span style="flex: 1">将来、物件を売却することはできますか？</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F3B36" stroke-width="2" aria-hidden="true" style="flex: none"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <div style="display: flex; gap: 16px; padding: 4px 24px 24px; border-top: 1px solid #E1E7E5; margin: 0 24px; padding-left: 0; padding-right: 0; padding-top: 20px"><span style="font-family: 'Shippori Mincho B1', serif; font-size: 22px; color: #D4A940; flex: none; line-height: 1.4">A.</span><div style="display: flex; flex-direction: column; gap: 10px; min-width: 0"><p style="margin: 0; font-size: 16px; font-weight: 700; color: #0F3B36; line-height: 1.7">はい、可能です。弊社では買取・仲介も行なっております。</p><p style="margin: 0; font-size: 15px; color: #3D424C; white-space: pre-line">弊社の強みとしまして、新築物件・中古物件、共に取り扱っていますので、比較的スムーズな売却が可能です。10年ほど所有し続けていれば、ローンの元金もある程度減っていますので、購入時の自己資金やローン年数にもよりますが、残債を上回る価格で売却することも十分に可能です。自分で使用するための不動産に比べ、投資用マンションの場合は賃貸中のままで売買を行うため、比較的スムーズに買い手を見つけることができます。立地が良くグレードの高い物件は希望金額以上で売却できるケースも見られます。弊社では物件の調査・査定、売買活動を行っているため、スピーディーかつきめ細やかな対応でサポートいたします。</p></div></div>
@@ -499,55 +454,46 @@ details[open] summary svg{transform:rotate(180deg)}
 </div>
 </section>
 
-<!-- Contact -->
-<section id="contact" style="background: #F2F5F4">
-<div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px">
-<div style="background: #0F3B36; color: #FFFFFF; padding: 64px clamp(24px, 5vw, 72px); display: flex; flex-wrap: wrap; align-items: center; gap: 40px 64px">
-<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
-<p style="margin: 0; font-size: 13px; letter-spacing: 0.24em; color: #D4A940; font-weight: 700">CONTACT</p>
-<h2 style="margin: 0; font-family: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.5">お気軽にご相談ください</h2>
-<p style="margin: 0; font-size: 15px; color: #D3E3DF">不動産に関するお問い合わせは、お電話・メールフォーム・LINEよりご相談ください。</p>
+<section id="contact" class="cta">
+<div class="wrap cta__in">
+<div class="cta__head">
+<p class="label">CONTACT</p>
+<h2 class="cta__title">お気軽に<br class="sp-br">ご相談ください</h2>
+<p class="cta__lead">不動産に関するお問い合わせは、お電話・メールフォーム・LINEよりご相談ください。</p>
 </div>
-<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-wrap: wrap; gap: 16px">
-<a href="tel:0528552699" style="flex: 1 1 100%; display: flex; flex-direction: column; gap: 4px; padding: 22px 26px; background: #FFFFFF; color: #0F3B36; text-decoration: none">
-<span style="font-size: 12px; color: #545A66">お電話（10:00〜20:00／水曜定休）</span>
-<span style="font-size: 26px; font-weight: 700; letter-spacing: 0.06em">052-855-2699</span>
-</a>
-<a href="/contact/" style="flex: 1 1 200px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 26px; min-height: 64px; background: #D4A940; color: #0F3B36; text-decoration: none; font-weight: 700; font-size: 16px">メールフォームで相談
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14"></rect><path d="M3 7l9 6 9-6"></path></svg></a>
-<a href="https://line.me/R/ti/p/@658qlmxa" target="_blank" rel="noopener" style="flex: 1 1 200px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 26px; min-height: 64px; background: #06C755; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 16px">LINEで相談
-<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"></path></svg></a>
+<div class="cta__acts">
+<a class="cta__tel" href="tel:0528552699"><span class="cta__tel-cap">お電話（10:00〜20:00／水曜定休）</span><span class="cta__tel-num">052-855-2699</span></a>
+<div class="cta__btns">
+<a class="cta__btn cta__btn--mail" href="/contact/">メールフォームで相談<svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="cta__btn cta__btn--line" href="https://line.me/R/ti/p/@658qlmxa" target="_blank" rel="noopener">LINEで相談<svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path></svg></a>
 </div>
 </div>
 </div>
 </section>
-
-<!-- Footer -->
-<footer style="background: #0A2A26; color: #BFD3CE">
-<div style="max-width: 1240px; margin: 0 auto; padding: 64px 32px 32px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px">
-<div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.9">
-<img src="/assets/logo-horizontal.png" alt="NISSO CAPITAL" style="height: 56px; width: auto; display: block; margin-bottom: 8px; align-self: flex-start">
+</main>
+<footer class="site-footer">
+<div class="site-footer__in">
+<div class="site-footer__top">
+<div class="site-footer__info">
+<img src="/assets/logo-horizontal.png" alt="NISSO CAPITAL" width="720" height="262">
 <span>NISSOキャピタル株式会社</span>
 <span>〒460-0007 愛知県名古屋市中区新栄1丁目31-7 fビル新栄Ⅰ 2A</span>
 <span>TEL 052-855-2699 ／ FAX 052-855-4258</span>
 <span>宅地建物取引業 愛知県知事（1）第25237号</span>
 </div>
-<nav aria-label="フッターメニュー" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 48px; font-size: 14px; align-content: start">
-<a href="/" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">ホーム</a>
-<a href="/#about" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">会社概要</a>
-<a href="/services/" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">事業内容</a>
-<a href="/invest/" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">不動産投資について</a>
-<a href="/simulator/" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">収支シミュレーション</a>
-<a href="/contact/" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">お問い合わせ</a>
-<a href="/privacy/" style="color: #E2EDEA; text-decoration: none; padding: 8px 0">個人情報保護方針</a>
+<nav class="site-footer__nav" aria-label="フッターメニュー">
+<a href="/">ホーム</a>
+<a href="/#about">会社概要</a>
+<a href="/services/">事業内容</a>
+<a href="/invest/">不動産投資について</a>
+<a href="/simulator/">収支シミュレーション</a>
+<a href="/contact/">お問い合わせ</a>
+<a href="/privacy/">個人情報保護方針</a>
 </nav>
 </div>
-<div style="border-top: 1px solid #1D4540; padding-top: 24px; font-size: 12px; color: #8FAAA4">© NISSO CAPITAL Co., Ltd. All Rights Reserved.</div>
+<div class="site-footer__copy">© NISSO CAPITAL Co., Ltd. All Rights Reserved.</div>
 </div>
 </footer>
-
-</div>
-
+<script src="/assets/renewal.js" defer></script>
 </body>
 </html>
