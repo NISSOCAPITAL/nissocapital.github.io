@@ -260,6 +260,18 @@ details[open] summary svg{transform:rotate(180deg)}
 
 /* invest page（デザインのインライン指定をスマホ幅で上書き） */
 .inv-art{scroll-margin-top:16px}
+:root{--gold-deep:#A8842F}
+main p[style*="letter-spacing: 0.24em; color: #7A5F38"]{color:var(--gold-deep)!important;font-family:var(--f-en);font-size:15px!important;letter-spacing:.32em!important}
+#merit h2,#flow h2,#faq h2{position:relative;padding-bottom:18px}
+#merit h2::after,#flow h2::after,#faq h2::after{content:"";position:absolute;left:50%;bottom:0;width:56px;height:2px;margin-left:-28px;background:var(--gold)}
+#merit a[href^="#m"]{position:relative;border-top:2px solid var(--gold);transition:background-color .25s,color .25s}
+#merit a[href^="#m"] span:first-child{font-family:var(--f-en)!important;font-size:30px!important;font-weight:500;line-height:1;color:var(--gold-deep)!important}
+#merit a[href^="#m"]:hover{background:var(--teal)!important;color:#FFFFFF}
+#merit a[href^="#m"]:hover span:first-child{color:var(--gold)!important}
+.inv-art__num{color:var(--gold)!important}
+.inv-art__head{border-bottom:0!important;background:linear-gradient(90deg,var(--teal) 0%,var(--gold) 100%) left bottom/100% 2px no-repeat}
+.inv-art__box{border-left-color:rgba(212,169,64,.55)!important}
+main h4[style*="border-left: 3px solid #0F3B36"]{border-left-color:var(--gold)!important}
 
 @media (min-width:1024px) and (max-width:1439px){
 .fv__path{padding:0 clamp(14px,1.6vw,24px);gap:8px}
@@ -426,3 +438,4 @@ main [style*="minmax(120px, 190px)"],main [style*="minmax(120px, 180px)"]{grid-t
 main [style*="minmax(120px, 190px)"] [style*="height: 40px"] span{font-size:11px;line-height:1.3;text-align:center}
 }
 @media (min-width:768px){.svc-row__main{display:contents}}
+nav[aria-label="ページ内メニュー"] a[style*="3px solid #0F3B36"]{border-bottom-color:var(--gold)!important}
