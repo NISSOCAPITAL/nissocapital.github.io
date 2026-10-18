@@ -145,9 +145,9 @@ details[open] summary svg{transform:rotate(180deg)}
 .band__in{padding-top:140px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:end}
 .band__text{display:flex;flex-direction:column;gap:26px}
 .band__text p.band__lead{margin:0;max-width:600px;font-size:16px;line-height:2.05;color:var(--on-dark)}
-.band{min-height:760px}
 .band .dark__rule{z-index:1}
-.band__text{position:relative;z-index:2}
+.dark__in.band__in{padding-top:120px;padding-bottom:104px}
+.band__text{position:relative;z-index:2;max-width:calc(52vw - var(--pad) - 116px)}
 .band__side{position:static;display:flex;flex-direction:column;justify-content:flex-end;align-self:stretch}
 .band__photo{position:absolute;z-index:0;top:0;right:0;bottom:0;width:48%;margin:0;overflow:hidden;background:var(--teal-2);clip-path:polygon(16% 0,100% 0,100% 100%,0 100%)}
 .band__photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transform-origin:50% 0}
@@ -331,8 +331,8 @@ details[open] summary svg{transform:rotate(180deg)}
 .band__text p.band__lead{font-size:14px;line-height:2}
 .band__link{min-height:60px;padding:0 22px;font-size:16px}
 .dark.band .dark__rule{display:none}
-.band{min-height:0}
-.band__in{padding-bottom:56px}
+.dark__in.band__in{padding-top:72px;padding-bottom:56px}
+.band__text{max-width:none}
 .band__side{display:block}
 .band__photo{position:relative;width:auto;margin:8px -20px 0;aspect-ratio:4/5;clip-path:none}
 .band__photo::after{background:linear-gradient(180deg,#0F3B36 0%,rgba(15,59,54,0) 22%,rgba(15,59,54,0) 55%,#0F3B36 100%)}
