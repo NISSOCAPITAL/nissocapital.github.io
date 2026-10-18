@@ -13,17 +13,21 @@
   }
 
   var root = document.documentElement;
-  var steps = document.querySelector('.steps');
-  if (steps && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    root.classList.add('reveal-ready');
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        steps.querySelectorAll('.step').forEach(function (s) { s.classList.add('is-in'); });
+  var groups = [['.steps', '.step'], ['.svc-rows', '.svc-row']];
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    groups.forEach(function (g) {
+      var box = document.querySelector(g[0]);
+      if (!box) return;
+      var items = box.querySelectorAll(g[1]);
+      items.forEach(function (el, i) { el.style.setProperty('--i', i); });
+      var io = new IntersectionObserver(function (entries) {
+        if (!entries.some(function (e) { return e.isIntersecting; })) return;
+        items.forEach(function (el) { el.classList.add('is-in'); });
         io.disconnect();
-      });
-    }, { threshold: 0.2 });
-    io.observe(steps);
+      }, { threshold: 0.2 });
+      io.observe(box);
+    });
+    root.classList.add('reveal-ready');
   }
 
   var fv = document.getElementById('top');
