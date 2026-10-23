@@ -215,6 +215,24 @@ details[open] summary svg{transform:rotate(180deg)}
 .cta__btn--line{border:1px solid var(--teal);color:var(--teal)}
 .cta__btn--line:hover{background:var(--mist);color:var(--teal)}
 
+.cta__btn--doc{grid-column:1/-1;min-height:72px;background:var(--teal-2);color:#FFFFFF;border:1px solid var(--gold);white-space:normal}
+.cta__btn--doc:hover{background:var(--teal);color:#FFFFFF}
+.cta__btn--doc .ico{color:var(--gold)}
+.cta__doc-t{display:flex;flex-direction:column;line-height:1.4}
+.cta__doc-en{font-family:var(--f-en);font-weight:600;font-size:12px;letter-spacing:.28em;color:var(--gold)}
+
+/* guidebook band (invest) */
+.doc-band{background:var(--teal);color:#FFFFFF}
+.doc-band__in{max-width:1080px;margin:0 auto;padding:72px 32px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:center}
+.doc-band__img{margin:0;border:1px solid rgba(212,169,64,.55);box-shadow:0 18px 40px rgba(0,0,0,.28);overflow:hidden}
+.doc-band__img img{display:block;width:100%;height:auto}
+.doc-band__text{display:flex;flex-direction:column;gap:16px}
+.doc-band__label{margin:0;font-family:var(--f-en);font-weight:600;font-size:15px;letter-spacing:.32em;color:var(--gold)}
+.doc-band__title{margin:0;font-family:var(--f-serif);font-size:clamp(24px,2.4vw,32px);font-weight:800;line-height:1.45}
+.doc-band__lead{margin:0;font-size:15px;line-height:2;color:var(--on-dark)}
+.doc-band__btn{align-self:flex-start;display:inline-flex;align-items:center;gap:12px;min-height:56px;margin-top:8px;padding:0 28px;background:var(--gold);color:var(--teal);font-weight:700;font-size:15px;text-decoration:none}
+.doc-band__btn:hover{background:#E0BA5C;color:var(--teal)}
+
 /* footer */
 .site-footer{background:var(--teal-3);color:#BFD3CE}
 .site-footer__in{max-width:1240px;margin:0 auto;padding:64px 32px 32px;display:flex;flex-direction:column;gap:40px}
@@ -389,6 +407,11 @@ main h4[style*="border-left: 3px solid #0F3B36"]{border-left-color:var(--gold)!i
 .cta__tel-num{font-size:40px}
 .cta__btns{grid-template-columns:1fr}
 .cta__btn{min-height:58px;padding:0 22px;font-size:15px}
+.cta__btn--doc{min-height:68px}
+.doc-band__in{grid-template-columns:1fr;gap:24px;padding:56px 20px}
+.doc-band__title{font-size:22px}
+.doc-band__lead{font-size:14px}
+.doc-band__btn{align-self:stretch;justify-content:center}
 
 .site-footer{background:var(--teal-2)}
 .site-footer__in{padding:48px 20px 28px;gap:24px}
