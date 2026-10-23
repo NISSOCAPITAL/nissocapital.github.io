@@ -233,6 +233,15 @@ details[open] summary svg{transform:rotate(180deg)}
 .doc-band__btn{align-self:flex-start;display:inline-flex;align-items:center;gap:12px;min-height:56px;margin-top:8px;padding:0 28px;background:var(--gold);color:var(--teal);font-weight:700;font-size:15px;text-decoration:none}
 .doc-band__btn:hover{background:#E0BA5C;color:var(--teal)}
 
+/* QR dialog (PC) */
+.qr-dlg{width:min(360px,calc(100% - 32px));padding:40px 32px 32px;border:1px solid var(--gold);background:#FFFFFF;color:var(--ink);text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.qr-dlg::backdrop{background:rgba(10,42,38,.72)}
+.qr-dlg__close{position:absolute;top:8px;right:8px;width:44px;height:44px;border:0;background:transparent;font-size:24px;line-height:1;color:var(--teal);cursor:pointer}
+.qr-dlg__label{margin:0;font-family:var(--f-en);font-weight:600;font-size:13px;letter-spacing:.32em;color:var(--gold-deep,#A8842F)}
+.qr-dlg__title{margin:8px 0 20px;font-family:var(--f-serif);font-size:19px;font-weight:700;line-height:1.5;color:var(--teal)}
+.qr-dlg__img{display:block;width:220px;height:220px;margin:0 auto;image-rendering:pixelated}
+.qr-dlg__text{margin:20px 0 0;font-size:13px;line-height:1.8;color:var(--ink-2)}
+
 /* footer */
 .site-footer{background:var(--teal-3);color:#BFD3CE}
 .site-footer__in{max-width:1240px;margin:0 auto;padding:64px 32px 32px;display:flex;flex-direction:column;gap:40px}

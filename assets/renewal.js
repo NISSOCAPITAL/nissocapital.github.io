@@ -13,6 +13,37 @@
   }
 
   var root = document.documentElement;
+
+  var QR = { 'code=LFYSTVYJ': 'doc', 'is=9qKmqWUTje': 'consult', 'group_id=203433': 'seminar', 'group_id=203431': 'seminar-online' };
+  var qrFor = function (href) { for (var k in QR) { if (href.indexOf(k) !== -1) return '/assets/qr/' + QR[k] + '.svg'; } return null; };
+  var isPC = window.matchMedia('(hover: hover) and (pointer: fine)');
+  var dlg;
+  var openQR = function (a, src) {
+    if (!dlg) {
+      dlg = document.createElement('dialog');
+      dlg.className = 'qr-dlg';
+      dlg.setAttribute('aria-labelledby', 'qr-dlg-title');
+      dlg.innerHTML = '<button type="button" class="qr-dlg__close" aria-label="閉じる">×</button>' +
+        '<p class="qr-dlg__label">LINE</p><h2 id="qr-dlg-title" class="qr-dlg__title"></h2>' +
+        '<img class="qr-dlg__img" alt="" width="240" height="240">' +
+        '<p class="qr-dlg__text">スマートフォンのカメラかLINEアプリで<br>QRコードを読み取ると、LINEで開きます。</p>';
+      document.body.appendChild(dlg);
+      dlg.querySelector('.qr-dlg__close').addEventListener('click', function () { dlg.close(); });
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    }
+    dlg.querySelector('.qr-dlg__title').textContent = (a.textContent || '').replace(/^\s*GUIDEBOOK/, '').trim();
+    var img = dlg.querySelector('.qr-dlg__img');
+    img.src = src; img.alt = dlg.querySelector('.qr-dlg__title').textContent + 'のQRコード';
+    if (dlg.showModal) dlg.showModal(); else window.open(a.href, '_blank', 'noopener');
+  };
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="https://liff.line.me/"]');
+    if (!a || !isPC.matches || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    var src = qrFor(a.href);
+    if (!src) return;
+    e.preventDefault();
+    openQR(a, src);
+  });
   var groups = [['.steps', '.step'], ['.svc-rows', '.svc-row'], ['.band', '.band__photo']];
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     groups.forEach(function (g) {
