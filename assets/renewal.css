@@ -233,6 +233,17 @@ details[open] summary svg{transform:rotate(180deg)}
 .doc-band__btn{align-self:flex-start;display:inline-flex;align-items:center;gap:12px;min-height:56px;margin-top:8px;padding:0 28px;background:var(--gold);color:var(--teal);font-weight:700;font-size:15px;text-decoration:none}
 .doc-band__btn:hover{background:#E0BA5C;color:var(--teal)}
 
+.inv-card{display:flex;flex-direction:column;background:var(--teal-2);border:1px solid rgba(212,169,64,.6);color:#FFFFFF;text-decoration:none;transition:border-color .2s,transform .2s}
+.inv-card:hover{border-color:var(--gold);color:#FFFFFF;transform:translateY(-2px)}
+.inv-card__img{display:block;width:100%;height:auto}
+.inv-card__body{display:flex;flex-direction:column;gap:6px;padding:16px 20px 18px}
+.inv-card__en{font-family:var(--f-en);font-weight:600;font-size:12px;letter-spacing:.3em;color:var(--gold)}
+.inv-card__ja{font-family:var(--f-serif);font-size:17px;font-weight:700;line-height:1.5}
+.inv-card__cta{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;margin-top:6px;padding:9px 16px;background:var(--gold);color:var(--teal);font-weight:700;font-size:14px}
+@media (min-width:1100px){.inv-title__in{position:relative;padding-right:calc(32px + 300px + 56px)!important;min-height:400px;justify-content:center}.inv-title__in>.inv-card{position:absolute;top:50%;right:32px;width:300px;transform:translateY(-50%)}.inv-title__in>.inv-card:hover{transform:translateY(calc(-50% - 2px))}}
+@media (max-width:1099px){.inv-card{flex-direction:row;align-items:center;margin-top:12px}.inv-card__img{width:min(38%,220px);flex:none}.inv-card__body{padding:12px 16px}}
+@media (max-width:767px){.inv-card__ja{font-size:14px}.inv-card__ja br{display:none}.inv-card__cta{font-size:12px;padding:7px 12px}.inv-card__cta .ico{display:none}}
+
 /* QR dialog (PC) */
 .qr-dlg{width:min(360px,calc(100% - 32px));padding:40px 32px 32px;border:1px solid var(--gold);background:#FFFFFF;color:var(--ink);text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.3)}
 .qr-dlg::backdrop{background:rgba(10,42,38,.72)}
